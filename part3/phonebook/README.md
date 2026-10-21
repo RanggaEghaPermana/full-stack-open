@@ -56,6 +56,6 @@ The dedicated Vercel project `fso-phonebook` deploys the Express backend and com
 
 Atlas uses the free M0 tier in Singapore. Its database user is restricted to read/write on database `phonebook` and scoped to cluster `fso-phonebook`. The network access list includes the local setup IP and `0.0.0.0/0` to permit Vercel's dynamic outbound addresses; database credentials are still required. The URI is stored only in a gitignored local `.env` and the production secret. This course app has no user authentication and contains only fictional demonstration contacts.
 
-All implementation and cloud verification requirements for exercises 3.1–3.21 are ready for learner review and submission.
+All implementation and cloud verification requirements for exercises 3.1–3.21 are ready for learner review and submission. The submission form also exposes checkbox22 for the ESLint stage; the backend ESLint configuration and passing lint check cover it.
 
 Official material: https://fullstackopen.com/en/part3/
