@@ -31,8 +31,8 @@ Source: https://fullstackopen.com/en/part0/fundamentals_of_web_apps/
 
 ## Part 4
 
-[Blog List backend](part4/bloglist/README.md) — implementation and23 tests ready for review; submission pending.
+[Blog List backend](part4/bloglist/README.md) — submitted23 exercises, two hours disclosed as an AI estimate;23 tests pass.
 
 ## Part 5
 
-[Blog List frontend and end-to-end tests](part5/README.md) — UI, seven component tests and nine local Chromium E2E tests verified; submission pending. GitHub CI remains blocked by an account billing lock.
+[Blog List frontend and end-to-end tests](part5/README.md) — all31 exercise implementations ready; routed UI and local tests verified, submission pending. GitHub CI remains blocked by an account billing lock.

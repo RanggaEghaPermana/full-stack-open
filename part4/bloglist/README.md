@@ -1,6 +1,6 @@
 # Part 4 — Blog List backend
 
-AI-assisted work prepared with Codex from the official exercise requirements. No model solutions were used. Prepared for learner review; not yet submitted.
+AI-assisted work prepared with Codex from the official exercise requirements. No model solutions were used. Submitted on21 October2026:23 exercises, with AI assistance and the two-hour estimate disclosed.
 
 ## Run
 
@@ -16,7 +16,7 @@ For a self-contained local demonstration, run `npm run demo`. This creates a rea
 - `POST /api/login` verifies credentials and returns an HS256 token valid for one hour.
 - `POST /api/blogs` requires a Bearer token and assigns its user as creator, ignoring supplied ownership. Title and URL are required; omitted likes default to zero.
 - `DELETE /api/blogs/:id` requires the creator's token; another user receives403, missing/invalid token401, absent blog404.
-- `PUT /api/blogs/:id` updates a finite nonnegative numeric likes value. This is public as required for the course like flow; other fields and ownership cannot be overwritten.
+- `PUT /api/blogs/:id` updates a finite nonnegative numeric likes value. The later routed Part5 stage now requires a Bearer token for likes as well; other fields and ownership cannot be overwritten.
 
 The application is split into controllers, models, configuration, database connection, logger and middleware. Express5 forwards rejected async handlers to centralized error middleware. `tokenExtractor` and route-specific `userExtractor` are separate middleware. User→blogs uses a Mongoose virtual population so the blog's creator reference is the single stored source of truth and deletion cannot leave stale duplicate references.
 

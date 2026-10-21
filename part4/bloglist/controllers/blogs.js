@@ -24,8 +24,8 @@ router.delete('/:id', userExtractor, async (request, response) => {
   await blog.deleteOne()
   response.status(204).end()
 })
-// Public likes updates are intentional for the course. Ownership and other fields cannot be changed here.
-router.put('/:id', async (request, response) => {
+// Routed Part 5 requires an authenticated user to like. Other fields cannot be changed here.
+router.put('/:id', userExtractor, async (request, response) => {
   const blog = await Blog.findById(request.params.id)
   if (!blog) return response.status(404).json({ error: 'blog not found' })
   if (typeof request.body?.likes !== 'number' || !Number.isFinite(request.body?.likes) || request.body?.likes < 0) {

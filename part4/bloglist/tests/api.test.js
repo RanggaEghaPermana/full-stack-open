@@ -72,6 +72,7 @@ describe('blog reading and creation', () => {
   test('missing and invalid tokens return401 and do not save', async () => {
     await api.post('/api/blogs').send(validBlog).expect(401)
     await api.post('/api/blogs').auth('invalid', { type: 'bearer' }).send(validBlog).expect(401)
+    await api.put(`/api/blogs/${blog.id}`).send({ likes: 4 }).expect(401)
     assert.equal(await Blog.countDocuments(), 1)
   })
   test('expired, nonexistent-user, and malformed-identity tokens are rejected', async () => {
@@ -84,7 +85,7 @@ describe('blog reading and creation', () => {
 })
 describe('blog updates and deletion', () => {
   test('PUT changes likes, persists and preserves ownership and content', async () => {
-    const { body } = await api.put(`/api/blogs/${blog.id}`).send({ likes: 12, title: 'Attempted overwrite', user: other.id }).expect(200)
+    const { body } = await api.put(`/api/blogs/${blog.id}`).auth(token, { type: 'bearer' }).send({ likes: 12, title: 'Attempted overwrite', user: other.id }).expect(200)
     assert.equal(body.likes, 12)
     const stored = await Blog.findById(blog.id)
     assert.equal(stored.likes, 12)
@@ -92,7 +93,7 @@ describe('blog updates and deletion', () => {
     assert.equal(stored.user.toString(), owner.id)
   })
   test('invalid likes do not change saved document', async () => {
-    for (const likes of [-1, '7', null]) await api.put(`/api/blogs/${blog.id}`).send({ likes }).expect(400)
+    for (const likes of [-1, '7', null]) await api.put(`/api/blogs/${blog.id}`).auth(token, { type: 'bearer' }).send({ likes }).expect(400)
     assert.equal((await Blog.findById(blog.id)).likes, 3)
   })
   test('creator deletion returns204 and removes blog from populated user list', async () => {
@@ -110,7 +111,7 @@ describe('blog updates and deletion', () => {
     const absent = new mongoose.Types.ObjectId().toString()
     for (const [id, code] of [['bad', 400], [absent, 404]]) {
       await api.get(`/api/blogs/${id}`).expect(code)
-      await api.put(`/api/blogs/${id}`).send({ likes: 2 }).expect(code)
+      await api.put(`/api/blogs/${id}`).auth(token, { type: 'bearer' }).send({ likes: 2 }).expect(code)
       await api.delete(`/api/blogs/${id}`).auth(token, { type: 'bearer' }).expect(code)
     }
   })
@@ -154,6 +155,6 @@ test('invalid JSON and unknown routes have JSON errors', async () => {
   await api.post('/api/users').set('Content-Type', 'application/json').send('{').expect(400)
   await api.post('/api/users').expect(400)
   await api.post('/api/blogs').auth(token, { type: 'bearer' }).expect(400)
-  await api.put(`/api/blogs/${blog.id}`).expect(400)
+  await api.put(`/api/blogs/${blog.id}`).auth(token, { type: 'bearer' }).expect(400)
   await api.get('/unknown').expect(404).expect('Content-Type', /json/)
 })

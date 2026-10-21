@@ -29,6 +29,7 @@ GET {{base}}/api/users
 
 ### Like a blog
 PUT {{base}}/api/blogs/{{blogId}}
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {"likes":1}
