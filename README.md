@@ -27,7 +27,7 @@ Source: https://fullstackopen.com/en/part0/fundamentals_of_web_apps/
 
 ## Part 3
 
-[Full Stack Phonebook](part3/phonebook/README.md) — Atlas-backed application deployed and verified at https://rangga-fso-phonebook.vercel.app; submission pending.
+[Full Stack Phonebook](part3/phonebook/README.md) — Atlas-backed application deployed and verified at https://rangga-fso-phonebook.vercel.app; submitted22 exercises, two hours explicitly disclosed as an AI estimate.
 
 ## Part 4
 

@@ -1,6 +1,6 @@
 # Part 3 — Full Stack Phonebook
 
-AI-assisted implementation prepared with Codex. This work is not yet submitted. The Express/Mongoose application uses an actual free Atlas M0 cluster and is deployed with its compiled React frontend.
+AI-assisted implementation prepared with Codex. Submitted on21 October2026:22 exercises, with AI assistance and the two-hour estimate disclosed in the submission comment. The Express/Mongoose application uses an actual free Atlas M0 cluster and is deployed with its compiled React frontend.
 
 Public application: **https://rangga-fso-phonebook.vercel.app**
 
