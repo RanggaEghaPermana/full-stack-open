@@ -1,0 +1,44 @@
+name: Blog List tests
+on:
+  push:
+    branches: [main]
+    paths: ['part4/**', 'part5/**', '.github/workflows/bloglist-tests.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Install backend
+        run: npm ci
+        working-directory: part4/bloglist
+      - name: Verify backend
+        run: npm run lint && npm test
+        working-directory: part4/bloglist
+      - name: Install frontend
+        run: npm ci
+        working-directory: part5/bloglist-frontend
+      - name: Verify frontend
+        run: npm run lint && npm test && npm run build
+        working-directory: part5/bloglist-frontend
+      - name: Install E2E dependencies
+        run: npm ci
+        working-directory: part5/bloglist-e2e
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+        working-directory: part5/bloglist-e2e
+      - name: Run isolated end-to-end tests
+        run: npm test
+        working-directory: part5/bloglist-e2e
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: bloglist-playwright-report
+          path: part5/bloglist-e2e/playwright-report/
+          retention-days: 7
