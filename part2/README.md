@@ -1,6 +1,6 @@
 # Part 2 — collections, forms, and server data
 
-AI-assisted work prepared with Codex, with assistance disclosed. Review the implementations and the official material before submitting them. Part 2 has not been submitted yet.
+AI-assisted work prepared with Codex, with assistance disclosed. Review the implementations and the official material before submitting them. Part 2 was submitted successfully on 21 October 2026: 20 exercises, 2 hours explicitly disclosed as an AI estimate requested by the learner.
 
 ## Run
 

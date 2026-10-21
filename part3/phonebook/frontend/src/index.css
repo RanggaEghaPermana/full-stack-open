@@ -1,0 +1,6 @@
+body { font-family: sans-serif; margin: 2rem; }
+label, li { line-height: 1.8; }
+.notification { border: 2px solid; border-radius: 5px; padding: 0.75rem; background: #f4f4f4; }
+.success { color: #176323; }
+.error { color: #ac1726; }
+[role="alertdialog"] { border: 1px solid #666; padding: 1rem; margin-top: 1rem; }

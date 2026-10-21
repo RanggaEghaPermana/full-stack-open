@@ -21,4 +21,8 @@ Source: https://fullstackopen.com/en/part0/fundamentals_of_web_apps/
 
 ## Part 2
 
-[Collections, Phonebook, and Countries](part2/README.md) — implemented and verified; submission pending learner review and study hours.
+[Collections, Phonebook, and Countries](part2/README.md) — submitted: 20 exercises, two hours disclosed as an AI estimate.
+
+## Part 3
+
+[Full Stack Phonebook](part3/phonebook/README.md) — local implementation and tests ready; Atlas and public deployment pending.

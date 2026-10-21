@@ -1,0 +1,33 @@
+@baseUrl = http://localhost:3001
+
+### List all
+GET {{baseUrl}}/api/persons
+
+### Create a fictional test contact
+POST {{baseUrl}}/api/persons
+Content-Type: application/json
+
+{"name":"REST Test Contact","number":"040-1234567"}
+
+### Info
+GET {{baseUrl}}/info
+
+### Set an actual id returned by POST before running these requests
+@personId = replace-with-created-id
+
+GET {{baseUrl}}/api/persons/{{personId}}
+
+### Update
+PUT {{baseUrl}}/api/persons/{{personId}}
+Content-Type: application/json
+
+{"name":"REST Test Contact","number":"09-1234567"}
+
+### Delete only the fictional test contact
+DELETE {{baseUrl}}/api/persons/{{personId}}
+
+### Validation failure
+POST {{baseUrl}}/api/persons
+Content-Type: application/json
+
+{"name":"Ab","number":"1-234"}
