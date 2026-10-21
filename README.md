@@ -4,7 +4,7 @@ Draft exercises and study notes for Rangga Egha Permana.
 
 ## Assistance disclosure
 
-The initial Part 0 diagrams and explanations were prepared with Codex AI assistance from the official course material. They are drafts for learner review, not a claim of independent authorship or completed personal study time. No exercises have been submitted from this workspace yet.
+The initial Part 0 diagrams and explanations were prepared with Codex AI assistance from the official course material. They are drafts for learner review, not a claim of independent authorship or completed personal study time. Part 0 was submitted successfully on 21 October 2026: six exercises and two hours, as supplied by the learner.
 
 ## Part 0
 
@@ -14,3 +14,7 @@ The initial Part 0 diagrams and explanations were prepared with Codex AI assista
 - [Reading and review checklist](part0/README.md)
 
 Source: https://fullstackopen.com/en/part0/fundamentals_of_web_apps/
+
+## Part 1
+
+[React applications and review instructions](part1/README.md) — implementation prepared, submission pending.

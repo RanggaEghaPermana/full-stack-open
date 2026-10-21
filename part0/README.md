@@ -18,6 +18,6 @@ These exercises require personal reading rather than GitHub deliverables. Their 
 
 ## Submission status
 
-Not submitted. The account currently shows zero submissions. The submission site asks the learner to agree not to present other people's work as their own. AI assistance is disclosed in these drafts; the learner must review the work and the applicable course rules before making that declaration. Do not invent study hours or mark reading exercises complete on the learner's behalf.
+Submitted successfully on 21 October 2026: exercises 0.1–0.6, two hours supplied by the learner. The submission comment discloses AI assistance for diagrams 0.4–0.6.
 
 Official instructions: https://fullstackopen.com/en/part0/fundamentals_of_web_apps/
