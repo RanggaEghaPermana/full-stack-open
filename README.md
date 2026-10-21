@@ -35,4 +35,4 @@ Source: https://fullstackopen.com/en/part0/fundamentals_of_web_apps/
 
 ## Part 5
 
-[Blog List frontend and end-to-end tests](part5/README.md) — UI and component tests verified; Chromium CI blocked by GitHub account billing lock, submission pending.
+[Blog List frontend and end-to-end tests](part5/README.md) — UI, seven component tests and nine local Chromium E2E tests verified; submission pending. GitHub CI remains blocked by an account billing lock.
