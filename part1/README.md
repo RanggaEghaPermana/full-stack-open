@@ -20,7 +20,7 @@ In the corresponding directory, run `npm ci`, then `npm run dev`. Use `npm run b
 - Try feedback sequences containing only bad votes, only neutral votes, and mixed votes.
 - Vote for different anecdotes and check that their counts stay independent.
 
-Submission is pending learner review and the learner's actual study time.
+Submitted successfully on 21 October 2026: all 14 exercises and two hours supplied by the learner. AI assistance is disclosed in the submission comment.
 
 Sources:
 - https://fullstackopen.com/en/part1/introduction_to_react/

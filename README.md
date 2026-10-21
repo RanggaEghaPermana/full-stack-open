@@ -17,4 +17,8 @@ Source: https://fullstackopen.com/en/part0/fundamentals_of_web_apps/
 
 ## Part 1
 
-[React applications and review instructions](part1/README.md) — implementation prepared, submission pending.
+[React applications and review instructions](part1/README.md) — submitted: 14 exercises, two hours.
+
+## Part 2
+
+[Collections, Phonebook, and Countries](part2/README.md) — implemented and verified; submission pending learner review and study hours.
