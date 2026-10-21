@@ -1,6 +1,8 @@
 # Full Stack Open — study workspace
 
-Draft exercises and study notes for Rangga Egha Permana.
+Exercises and study notes for Rangga Egha Permana.
+
+Course: https://fullstackopen.com/en/
 
 ## Assistance disclosure
 
@@ -25,4 +27,4 @@ Source: https://fullstackopen.com/en/part0/fundamentals_of_web_apps/
 
 ## Part 3
 
-[Full Stack Phonebook](part3/phonebook/README.md) — local implementation and tests ready; Atlas and public deployment pending.
+[Full Stack Phonebook](part3/phonebook/README.md) — Atlas-backed application deployed and verified at https://rangga-fso-phonebook.vercel.app; submission pending.

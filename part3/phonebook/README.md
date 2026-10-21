@@ -1,6 +1,12 @@
 # Part 3 — Full Stack Phonebook
 
-AI-assisted implementation prepared with Codex. This work is not yet submitted. The Express/Mongoose application is implemented and tested locally. A free Atlas M0 cluster has been provisioned, and the database CLI successfully connected and created a fictional record. Public deployment is still pending. There is no verified public application URL yet.
+AI-assisted implementation prepared with Codex. This work is not yet submitted. The Express/Mongoose application uses an actual free Atlas M0 cluster and is deployed with its compiled React frontend.
+
+Public application: **https://rangga-fso-phonebook.vercel.app**
+
+API: https://rangga-fso-phonebook.vercel.app/api/persons
+
+Information: https://rangga-fso-phonebook.vercel.app/info
 
 ## Local setup
 
@@ -38,17 +44,18 @@ For the course's password-argument format, configure a non-secret `MONGODB_URI_T
 - Frontend production build and copy to backend `public/` passed.
 - Seven integration tests passed against a real local MongoDB process: normalized list/info; persisted create/read/update/delete; missing fields, short names, invalid phone formats; case-insensitive duplicates; validation on update without corrupting stored data; malformed ids/JSON and missing routes; and CLI add/list with connection cleanup.
 - HTTP verification confirmed Express serves the Part 3 HTML and referenced production JS/CSS assets, and `/api/persons` returns the local MongoDB sample records.
-- Browser checks of the Express-served frontend showed the MongoDB sample contacts, displayed the backend validation message for a two-character name, created a fictional test contact, and updated its number successfully. A subsequent browser reload was interrupted by Chrome extension UI. API-level delete and persistence checks passed in the integration suite; the full public deployment/browser flow is still pending.
-- `requests/persons.rest` contains requests for manual REST-client checking. No real cloud data is used in the automated tests.
+- Public deployment checks passed without a Vercel login: frontend HTML, API JSON, and `/info` all return HTTP 200.
+- Remote checks against the actual Atlas database passed create/read/update/delete, duplicate rejection, invalid names and ids, validation on update without changing stored data, and cleanup.
+- Browser checks on the public application passed creating a fictional contact, updating it, verifying persistence in a fresh page, and deleting it through the inline confirmation. The test contact was removed.
+- The database CLI successfully added and listed a fictional contact in Atlas.
+- `requests/persons.rest` contains requests for manual REST-client checking. Automated integration tests use an isolated local database.
 
-## Remaining work before submission
+## Deployment
 
-- Provision the free Atlas cluster and a database user restricted to the phonebook database; configure authorized network access and the secret connection string.
-- Verify the database CLI and CRUD against Atlas.
-- Deploy the backend (which serves the compiled frontend) to a free hosting service; put the verified public application URL here.
-- Verify browser CRUD, validation feedback, `/info`, and persistence on the deployed application.
-- Submit only after these cloud requirements are actually met. No deployment or Atlas exercise is claimed complete by the local test results.
+The dedicated Vercel project `fso-phonebook` deploys the Express backend and compiled frontend from this directory, using the Singapore region. The generated frontend is copied to `public/`, which Vercel serves as static assets. The connection string is supplied as a Production Secret. Code deployment was verified at commit `70ba9c5`.
+
+Atlas uses the free M0 tier in Singapore. Its database user is restricted to read/write on database `phonebook` and scoped to cluster `fso-phonebook`. The network access list includes the local setup IP and `0.0.0.0/0` to permit Vercel's dynamic outbound addresses; database credentials are still required. The URI is stored only in a gitignored local `.env` and the production secret. This course app has no user authentication and contains only fictional demonstration contacts.
+
+All implementation and cloud verification requirements for exercises 3.1–3.21 are ready for learner review and submission.
 
 Official material: https://fullstackopen.com/en/part3/
-
-Atlas setup: cluster `fso-phonebook` uses the free M0 tier in Singapore. The app database user is restricted to read/write on `phonebook` and this cluster. The connection string is stored in a gitignored local file and as a Production Secret on the dedicated `fso-phonebook` Vercel project. The learning app contains fictional contacts; its API intentionally follows the course without user authentication.
