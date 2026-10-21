@@ -1,6 +1,6 @@
 # Part 5 — Blog List frontend and tests
 
-AI-assisted implementation prepared with Codex from the official requirements, for learner review. No model solution was used. Not submitted yet.
+AI-assisted implementation prepared with Codex from the official requirements, for learner review. No model solution was used. Submitted successfully on21 October2026:31 exercises, with AI assistance and the two-hour estimate disclosed in the submission comment.
 
 ## Run and review
 

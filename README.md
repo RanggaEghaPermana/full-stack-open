@@ -35,4 +35,4 @@ Source: https://fullstackopen.com/en/part0/fundamentals_of_web_apps/
 
 ## Part 5
 
-[Blog List frontend and end-to-end tests](part5/README.md) — all31 exercise implementations ready; routed UI and local tests verified, submission pending. GitHub CI remains blocked by an account billing lock.
+[Blog List frontend and end-to-end tests](part5/README.md) — submitted31 exercises; routed UI and local tests verified. Parts0–5 total116 submitted exercises; the course system displays grade5 and an available completion certificate. GitHub CI remains blocked by an account billing lock.
