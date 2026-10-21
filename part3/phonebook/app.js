@@ -12,7 +12,7 @@ app.use((request, response, next) => { request.receivedAt = new Date(); next() }
 app.use(express.json())
 morgan.token('post-data', request => request.method === 'POST' ? JSON.stringify(request.body) : '')
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :post-data', { skip: () => process.env.NODE_ENV === 'test' }))
-app.use(express.static(path.join(directory, 'dist')))
+app.use(express.static(path.join(directory, 'public')))
 app.use(['/api', '/info'], async (request, response, next) => { await connectDatabase(); next() })
 
 app.get('/api/persons', async (request, response) => response.json(await Person.find({})))
