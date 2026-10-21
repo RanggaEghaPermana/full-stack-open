@@ -1,0 +1,38 @@
+@base = http://localhost:3005
+@token = paste-token-from-login-response
+@blogId = paste-created-blog-id
+
+### Create a fictional local demo user
+POST {{base}}/api/users
+Content-Type: application/json
+
+{"username":"demo-reader","name":"Demo Reader","password":"local-demo-password"}
+
+### Log in, then copy token into @token above
+POST {{base}}/api/login
+Content-Type: application/json
+
+{"username":"demo-reader","password":"local-demo-password"}
+
+### Create a blog (copy returned id into @blogId)
+POST {{base}}/api/blogs
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"title":"Learning API testing","author":"Demo Author","url":"https://example.com/testing"}
+
+### Public list
+GET {{base}}/api/blogs
+
+### Users and their blogs, excluding password hashes
+GET {{base}}/api/users
+
+### Like a blog
+PUT {{base}}/api/blogs/{{blogId}}
+Content-Type: application/json
+
+{"likes":1}
+
+### Only its creator can delete
+DELETE {{base}}/api/blogs/{{blogId}}
+Authorization: Bearer {{token}}
